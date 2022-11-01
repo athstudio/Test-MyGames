@@ -14,14 +14,14 @@ public class CubeManager : MonoBehaviour
     [SerializeField] private GameObject prefabCube;
     
     private float _timeSpawn;
-    
-    void Start()
+
+    private void Start()
     {
         ShowUI();
         _timeSpawn = _startTimeSpawn;
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         if (_timeSpawn > 0)
         {
