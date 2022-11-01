@@ -1,18 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CubeMoving : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private float cubeTimeLife = 5f;
+    
+    private float _speed;
+    private Vector3 _endPos;
+    
+    private void Update()
     {
-        
+        transform.position = Vector3.Slerp(transform.position, _endPos, Time.deltaTime * _speed);
+        Destroy(gameObject, cubeTimeLife);
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    public void SetCubeMoving(float speed, Vector3 endPos)
     {
-        
+        _speed = speed;
+        _endPos = endPos;
     }
 }

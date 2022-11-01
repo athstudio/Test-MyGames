@@ -33,6 +33,6 @@ public class CubeManager : MonoBehaviour
         GameObject spawn = Instantiate(prefabCube, Vector3.zero, Quaternion.identity);
         Vector2 startPos = Vector2.up * distance;
         Vector3 endPos = new Vector3(startPos.x, 0, startPos.y);
-        // add script CubeMoving
+        spawn.GetComponent<CubeMoving>().SetCubeMoving(speed, endPos);
     }
 }
